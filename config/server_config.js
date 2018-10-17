@@ -8,11 +8,11 @@ const server_config = {
     livereload: true,
     open:true,
     middleware: [
-        proxy('/lagou', { // /lagou 这个是判断依据 当我们请求'http://localhost:8080/lagou/abc'的时候，这个代理就生效了
-            target: 'https://m.lagou.com',// 配置目标服务器 当前服务器回去请求 https://m.lagou.com/lagou/abc
+        proxy('/quanzhi', { // /quanzhi 这个是判断依据 当我们请求'http://localhost:8080/quanzhi/abc'的时候，这个代理就生效了
+            target: 'https://m.quanzhi.com', // 配置目标服务器 当前服务器回去请求 https://m.quanzhi.com/quanzhi/abc
             changeOrigin: true,
-            pathRewrite: { // https://m.lagou.com/abc
-                '^/lagou': ''
+            pathRewrite: { // https://m.quanzhi.com/abc
+                '^/quanzhi': ''
             }
         }),
         proxy('/api', {

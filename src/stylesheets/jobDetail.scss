@@ -1,0 +1,208 @@
+@import './yo/usage/core/reset.scss';
+
+body {
+    background: #f7f7f7;
+    overflow-y: scroll;
+}
+
+.job-detail__header {
+    line-height: 1.066667rem;
+    display: flex;
+    justify-content: space-between;
+    background: #ffffff;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.go-back {
+    font-size: .533333rem;
+    font-weight: bold;
+    color: #b3b3b3;
+    padding-left: .266667rem;
+}
+
+.job-detail__title {
+    flex-grow: 1;
+    text-align: center;
+    font-size: .426667rem;
+    font-weight: 500;
+    color: #333333;
+}
+
+.job-detail__user {
+    padding-right: .266667rem;
+}
+
+.job-detail__user img {
+    vertical-align: middle;
+    width: .72rem;
+    height: .72rem;
+    border-radius: 100%;
+}
+
+.job-detail__content {}
+
+.job-detail__general {
+    background: #ffffff;
+    padding: .32rem .266667rem;
+}
+
+.job-detail__position {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.job-detail__positionName {
+    font-weight: 500;
+    font-size: .48rem;
+    line-height: .746667rem;
+}
+
+.job-detail__timer {
+    color: #b3b3b3;
+    font-size: .32rem;
+}
+
+.job-detail__salary {
+    font-size: .426667rem;
+    line-height: .64rem;
+    color: #19b497;
+}
+
+.job-detail__required {
+    line-height: .746667rem;
+    font-size: .32rem;
+    color: #999;
+}
+
+.job-detail__condition {
+    margin-right: .133333rem
+}
+
+.company-general {
+    margin-top: .266667rem;
+    background: #ffffff;
+}
+
+.company-general__con {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.53333333rem;
+    position: relative;
+    color: #999;
+    line-height: .56rem;
+    font-size: 0.32rem;
+
+}
+
+.company-general__logo {
+    min-width: 1.76rem;
+    width: 1.76rem;
+    height: 1.76rem;
+    overflow: hidden;
+    text-align: center;
+    line-height: 1.76rem;
+    font-size: .96rem;
+    background: #f2f2f2;
+}
+
+.company-general__info {
+    padding-left: 0.3rem;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.company-general__name {
+    display: block;
+    line-height: .64rem;
+    font-size: .373333rem;
+    color: #333333;
+}
+
+.company-generalindustry,
+.company-generalnatr {
+    display: block;
+    color: #999;
+    line-height: .56rem;
+    font-size: .32rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.company-general__arrow {
+    display: flex;
+    align-items: center;
+}
+
+.company-general__arrow i {
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    font-size: .426667rem;
+    font-weight: 600;
+}
+
+.job-detail__info {
+    margin-top: .266667rem;
+    background: #ffffff;
+    padding: 0.2rem .266667rem;
+    line-height: .533333rem;
+}
+
+.job-detail__comTitle {
+    line-height: .64rem;
+    font-size: .373333rem;
+    font-weight: normal;
+    text-align: center;
+    color: #666666;
+}
+
+.job-detail__comTitle::before,
+.job-detail__comTitle::after {
+    content: "\020";
+    width: 2.666667rem;
+    height: .306667rem;
+    border-bottom: 1px solid #f4f4f4;
+    margin-right: 0.8rem;
+    vertical-align: top;
+    display: inline-block;
+}
+
+.job-detail__rules {
+    color: #666666;
+    padding: .213333rem .013333rem 0;
+    line-height: .533333rem;
+    font-size: .346667rem;
+}
+
+.job-detail__common {
+    line-height: .533333rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.common-icon {
+    width: .453333rem;
+    margin: 0 .133333rem;
+}
+
+.job-detail__address {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.commom-font {
+    font-size: .346667rem;
+    color: #999999;
+    flex-grow: 1;
+
+}
+
+.job-detail__common .icon-xiala {
+    -webkit-transform: rotate(-90deg);
+    font-size: .426667rem;
+    font-weight: 600;
+    color: #999;
+}

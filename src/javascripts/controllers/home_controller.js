@@ -18,6 +18,7 @@ const render = () => {
     $('.home-title').tap(function () {
         router.switch('#/job');
     })
+
 }
 
 // // 切换标签

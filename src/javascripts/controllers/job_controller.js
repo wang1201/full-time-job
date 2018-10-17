@@ -1,28 +1,33 @@
-
 import job_template from '../views/home-job.html';
 import job_content_template from '../views/home-job-content.html';
 import job_model from '../models/home_job_model';
+import job_detail from '../models/home_job_detail';
+
+import job_detail_template from '../views/home-job-detail.html';
+
 
 import BScroll from 'better-scroll';
 
 // 当前加载的职位信息的页数
 let _pageNo = 1;
-let datasources = [] // job页面要显示的所有的数据
+let datasourceList = [] // job页面要显示的列表的数据
 const render = () => {
-    
+
     // 初始加载一下 首页的框架
     let _template = Handlebars.compile(job_template);
     let _html = _template();
     $('.home-container main').html(_html);
+
     handleContentScroll();
-} 
+
+}
 
 const handleContentScroll = async () => { // 处理整个程序滚动等等逻辑
-    
+
 
     // 实力和bscroll
     let _job_scroll = new BScroll('main', {
-        startY: -80,
+        startY: 0,
         probeType: 2
     });
 
@@ -32,7 +37,7 @@ const handleContentScroll = async () => { // 处理整个程序滚动等等逻�
 
     let _o_scroll_info_top = $('.scroll-info--top') // 下拉刷新的dom元素
     let _o_scroll_info_top_title = _o_scroll_info_top.find('.scroll-info__title') // 下拉刷新的文字dom
-    
+
     let _o_scroll_info_bottom = $('.scroll-info--bottom') // 下拉刷新的dom元素
     let _o_scroll_info_bottom_title = _o_scroll_info_bottom.find('.scroll-info__title') // 下拉刷新的文字dom
 
@@ -41,9 +46,12 @@ const handleContentScroll = async () => { // 处理整个程序滚动等等逻�
 
 
     let _scroll_bottom_sta = false;
-    
-    _job_scroll.on('scroll', ({ x, y }) => {
-        if ( y > 0 && _scroll_y_sta !== 'release') { // 放手就刷新
+
+    _job_scroll.on('scroll', ({
+        x,
+        y
+    }) => {
+        if (y > 0 && _scroll_y_sta !== 'release') { // 放手就刷新
             // 使用状态判断是放在符合条件还不断的更改视图
             _scroll_y_sta = 'release'
             _o_scroll_info_top.prop('class', _top_class + 'release-refresh')
@@ -51,35 +59,38 @@ const handleContentScroll = async () => { // 处理整个程序滚动等等逻�
         }
 
         _scroll_bottom_sta = false;
-        if ( _job_scroll.maxScrollY - y > 0 ) {
+        if (_job_scroll.maxScrollY - y > 0) {
             _scroll_bottom_sta = true;
             _o_scroll_info_bottom_title.html('放开去加载')
         }
     })
 
-    _job_scroll.on('scrollEnd', async ({ x, y }) => {
-        if ( y > -80 && y < 0 ) { // 没有完全拉出刷新元素
-            // 塞回去
-            _job_scroll.scrollTo(0, -80, 300)
-        }else if ( y === 0  ) { // 说明该获取数据去了
-            if ( _scroll_y_sta === 'release' ) {
-                _o_scroll_info_top.prop('class', _top_class + 'loading')
-                _o_scroll_info_top_title.html('正在加载')
-                await refreshJobList()
-                _o_scroll_info_top.prop('class', _top_class + 'go-refresh')
-                _o_scroll_info_top_title.html('下拉就刷新')
-                _scroll_y_sta = 'go'
-                _job_scroll.refresh()
-            }     
-            _job_scroll.scrollTo(0, -80, 300)
-        }
+    _job_scroll.on('scrollEnd', async ({
+        x,
+        y
+    }) => {
+        // if ( y > -80 && y < 0 ) { // 没有完全拉出刷新元素
+        //     // 塞回去
+        //     _job_scroll.scrollTo(0, -80, 300)
+        // }else if ( y === 0  ) { // 说明该获取数据去了
+        //     if ( _scroll_y_sta === 'release' ) {
+        //         _o_scroll_info_top.prop('class', _top_class + 'loading')
+        //         _o_scroll_info_top_title.html('正在加载')
+        //         await refreshJobList()
+        //         _o_scroll_info_top.prop('class', _top_class + 'go-refresh')
+        //         _o_scroll_info_top_title.html('下拉就刷新')
+        //         _scroll_y_sta = 'go'
+        //         _job_scroll.refresh()
+        //     }     
+        //     _job_scroll.scrollTo(0, -80, 300)
+        // }
 
 
-        if ( _job_scroll.maxScrollY - y === 0 && _scroll_bottom_sta ) {
-            
+        if (_job_scroll.maxScrollY - y === 0 && _scroll_bottom_sta) {
+
             _o_scroll_info_bottom_title.html('正在加载')
             _o_scroll_info_bottom.addClass('loading')
-            _pageNo ++
+            _pageNo++
             await getJobList();
             _o_scroll_info_bottom_title.html('上拉去加载')
             _o_scroll_info_bottom.removeClass('loading')
@@ -93,31 +104,52 @@ const handleContentScroll = async () => { // 处理整个程序滚动等等逻�
 
 const refreshJobList = async () => { // 下拉刷新的时候去获取数据
     let _job_data = await job_model.job_refresh()
-    let _job_list = _job_data.content.data.page.result
-    datasources = [ ..._job_list, ...datasources ] // 刷新，新数据放在前面
+    let _job_list = _job_data.result.data.page.result
+    datasourceList = [..._job_list, ...datasourceList] // 刷新，新数据放在前面
     renderJobList()
 }
 
 const getJobList = async () => { // 获取某一页数据
 
-    let _job_data = await job_model.job_list(_pageNo)
+    let _job_data = await job_model.job_list(_pageNo);
+    _job_data = JSON.parse(_job_data);
+    let ids = _job_data.result.ids;
+    let _job_list = [];
+    let _cominfo_List = [];
+    ids.forEach(item => {
+        _job_list.push(_job_data.result.list[item]);
+    });
+    console.log(_job_list[0]);
+    _job_list.forEach(item => {
+
+        item['ComLogoFlag'] = _job_data.result.cominfoList[item.ParentComId].ComLogoFlag;
+    })
+    console.log(_job_list);
 
     // 多个职位信息数组
-    let _job_list = _job_data.content.data.page.result
 
-    datasources = [ ...datasources, ..._job_list ]
 
+    datasourceList = [...datasourceList, ..._job_list];
     renderJobList() // 每次获取到新的数据后重新渲染
-   
+
 }
 
 const renderJobList = () => { // 渲染job-content
     // 将html字符串处理成编译函数
     let _template = Handlebars.compile(job_content_template)
     // 将handlebar模板编译成html格式的字符串
-    let _html = _template({ _job_list: datasources})
+    let _html = _template({
+        _job_list: datasourceList
+    })
     //  渲染job视图
-    $('.home-container main .job-content').html(_html)
+    $('.home-container main .job-content').html(_html);
+    $('.home-container main .job-item').tap(function () {
+        // location.href = '../../job-detail.html';
+        let _index = $(this).attr('index');
+        console.log(_index);
+        let x = job_detail.job_detailInfo(_index);
+        console.log(x);
+    })
 }
 
 
