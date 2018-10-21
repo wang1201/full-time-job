@@ -9,9 +9,9 @@ const company_detailInfo = (id) => {
     })
 }
 //公司招聘信息
-const company_jobDetail = (id) => {
+const company_jobDetail = (id, pageNo = 1) => {
     return $.ajax({
-        url: `/quanzhi/ajax/job/search?p=1&comid=${id}`,
+        url: `/quanzhi/ajax/job/search?p=${pageNo}&comid=${id}`,
         dataType: 'json',
         success: (res) => {
             return res;

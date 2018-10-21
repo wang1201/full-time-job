@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,115 +15,123 @@
     <link rel="stylesheet" href="/static/fonts/index/iconfont.css">
  
 </head>
+
 <body>
-<div id="root">
-        <div class="home-container">
-                <main>
-                        <header class="addtype-title">
-                                <a href="resume-chooseResume.html">
-                                        <i class="iconfont icon-jiantouarrowhead7 lift-arrow"></i>
-                                </a>
-                                <h1>编辑简历</h1>
-                                <span></span>
-                        </header>
-                        <form>
-                                <div>
-                                        <div class="form-section">
-                                                <i class="must">*</i>
-                                                <label class="required label">姓名</label>
-                                                <input class="userName" name="Name" type="text" placeholder="请输入姓名">
-                                        </div>
-                                        <div class="form-section">
-                                                <i class="must">*</i>
-                                                <label class="required label">手机</label>
-                                                <input class="phone" name="Mobile" type="text" placeholder="请输入手机号">
-                                        </div>
-                                        <div class="form-section">
-                                                <i class="must">*</i>
-                                                <label class="required label">参加工作时间</label>
-                                                <input class="jobTime" id="demo4" type="text" readonly="" placeholder="请选择 〉" />
-                                        </div>
-                                        <div class="form-section">
-                                                <i class="must">*</i>
-                                                <label class="required label">现居住地</label>
-                                                <input class="address" id="demo1" type="text" readonly="" name="input_area" placeholder="请选择 〉" />
-
-                                        </div>
-                                        <div class="form-section">
-                                                <i class="must">*</i>
-                                                <label class="required label">出生日期</label>
-                                                <input class="birthDay" id="demo3" type="text" readonly="" placeholder="请选择 〉" data-lcalendar="2016-05-11,2016-05-11" />
-                                                <!-- <input   type="text" id="dateSelectorOne" placeholder="" > -->
-                                        </div>
-                                        <div class="form-section">
-                                                <i class="must">*</i>
-                                                <label class="required label">性别</label>
-                                                <div>
-                                                        <label>
-                                                                <input type="radio" name="Sex" value="1">
-                                                                <span>男</span>
-                                                        </label>
-                                                        <label>
-                                                                <input type="radio" name="Sex" value="2" checked="checked">
-                                                                <span>女</span>
-                                                        </label>
+        <div id="root">
+                <div class="home-container">
+                        <main>
+                                <header class="addtype-title">
+                                        <a href="resume-chooseResume.html">
+                                                <i class="iconfont icon-jiantouarrowhead7 lift-arrow"></i>
+                                        </a>
+                                        <h1>编辑简历</h1>
+                                        <span></span>
+                                </header>
+                                <form>
+                                        <div>
+                                                <div class="form-section">
+                                                        <i class="must">*</i>
+                                                        <label class="required label">姓名</label>
+                                                        <input class="userName" name="Name" type="text" placeholder="请输入姓名">
                                                 </div>
-                                        </div>
-                                        <div class="form-section none">
-                                                <label class="required label">学历</label>
-                                                <input id="trigger1" type="text" placeholder="请选择 〉">
-                                        </div>
-                                </div>
+                                                <div class="form-section">
+                                                        <i class="must">*</i>
+                                                        <label class="required label">手机</label>
+                                                        <input class="phone" name="Mobile" type="text" placeholder="请输入手机号">
+                                                </div>
+                                                <div class="form-section">
+                                                        <i class="must">*</i>
+                                                        <label class="required label">参加工作时间</label>
+                                                        <input class="jobTime" id="demo4" type="text" readonly=""
+                                                                placeholder="请选择 〉" />
+                                                </div>
+                                                <div class="form-section">
+                                                        <i class="must">*</i>
+                                                        <label class="required label">现居住地</label>
+                                                        <input class="address" id="demo1" type="text" readonly="" name="input_area"
+                                                                placeholder="请选择 〉" />
 
-                                <div>
-                                        <div class="form-section">
-                                                <i class="must">*</i>
-                                                <label class="required label">期望地点</label>
-                                                <input class="needAddress" id="demo2" type="text" readonly="" name="input_area" placeholder="请选择 〉" />
-                                        </div>
-                                        <div class="form-section none">
-                                                <label class="required label">期望职位</label>
-                                                <input id="trigger2" type="text" placeholder="请选择期望职位 〉">
-                                        </div>
-                                        <div class="form-section none">
-                                                <label class="required label">期望薪资</label>
-                                                <input type="text" placeholder="请输入薪资">
-                                                <i>元</i>
-                                        </div>
-                                </div>
-                                <div>
-                                        <div class="form-section none">
-                                                <label class="required label">自我介绍</label>
-                                                <input id="introduce" type="text" placeholder="未填写 〉">
-                                        </div>
-                                        <p class="introduce" style="word-break: break-all;"></p>
-
-                                        <div class="error">
-                                                <span class="errorConter"></span>
-                                        </div>
-                                        <div class="shade">
-                                                <div class="content">
-                                                        <div class="form-textarea">
-                                                                <textarea name="Assessment" maxlength="200" id="assessment" placeholder="请简要介绍下你自己"></textarea>
-                                                                <p class="word-count">
-                                                                        <span id="count">0</span>/200字</p>
+                                                </div>
+                                                <div class="form-section">
+                                                        <i class="must">*</i>
+                                                        <label class="required label">出生日期</label>
+                                                        <input class="birthDay" id="demo3" type="text" readonly=""
+                                                                placeholder="请选择 〉" data-lcalendar="2016-05-11,2016-05-11" />
+                                                        <!-- <input   type="text" id="dateSelectorOne" placeholder="" > -->
+                                                </div>
+                                                <div class="form-section">
+                                                        <i class="must">*</i>
+                                                        <label class="required label">性别</label>
+                                                        <div>
+                                                                <label>
+                                                                        <input type="radio" name="Sex" value="1">
+                                                                        <span>男</span>
+                                                                </label>
+                                                                <label>
+                                                                        <input type="radio" name="Sex" value="2"
+                                                                                checked="checked">
+                                                                        <span>女</span>
+                                                                </label>
                                                         </div>
                                                 </div>
-                                                <div class="btn-group">
-                                                        <button type="button" class="cancel">取消</button>
-                                                        <button type="button" class="submit">保存</button>
+                                                <div class="form-section none">
+                                                        <label class="required label">学历</label>
+                                                        <input id="trigger1" type="text" placeholder="请选择 〉">
+                                                </div>
+                                        </div>
+
+                                        <div>
+                                                <div class="form-section">
+                                                        <i class="must">*</i>
+                                                        <label class="required label">期望地点</label>
+                                                        <input class="needAddress" id="demo2" type="text" readonly=""
+                                                                name="input_area" placeholder="请选择 〉" />
+                                                </div>
+                                                <div class="form-section none">
+                                                        <label class="required label">期望职位</label>
+                                                        <input id="trigger2" type="text" placeholder="请选择期望职位 〉">
+                                                </div>
+                                                <div class="form-section none">
+                                                        <label class="required label">期望薪资</label>
+                                                        <input type="text" placeholder="请输入薪资">
+                                                        <i>元</i>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="form-section none">
+                                                        <label class="required label">自我介绍</label>
+                                                        <input id="introduce" type="text" placeholder="未填写 〉">
+                                                </div>
+                                                <p class="introduce" style="word-break: break-all;"></p>
+
+                                                <div class="error">
+                                                        <span class="errorConter"></span>
+                                                </div>
+                                                <div class="shade">
+                                                        <div class="content">
+                                                                <div class="form-textarea">
+                                                                        <textarea name="Assessment" maxlength="200" id="assessment"
+                                                                                placeholder="请简要介绍下你自己"></textarea>
+                                                                        <p class="word-count">
+                                                                                <span id="count">0</span>/200字</p>
+                                                                </div>
+                                                        </div>
+                                                        <div class="btn-group">
+                                                                <button type="button" class="cancel">取消</button>
+                                                                <button type="button" class="submit">保存</button>
+                                                        </div>
+
                                                 </div>
 
                                         </div>
-
-                                </div>
-                                <p class="btn-line">
-                                        <input class="save" type="submit" onclick ="return false;"value="保存">
-                                </p>
-                        </form>
+                                        <p class="btn-line">
+                                                <input class="save" type="submit" onclick="return false;" value="保存">
+                                        </p>
+                                </form>
 
 
-                </main>
+                        </main>
+                </div>
         </div>
 </div>
 
@@ -144,4 +153,3 @@
 </body>
 
 </html>
-

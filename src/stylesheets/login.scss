@@ -1,0 +1,56 @@
+@import './yo/usage/core/reset.scss';
+
+body{
+    background: #f0f4f7;
+}
+.login-top__logo {
+    height: 3.2rem;
+    background: url(https://rcss.quanzhi.cn/images/logo.png) center / auto 29.57746479% no-repeat;
+}
+.user-login-forms{
+    padding: 0 .213333rem;
+}
+.user-switch-form{
+    background: #ffffff;
+    padding: 0 1rem 0.64rem;
+    display: flex;
+    text-align: center;
+}
+.user-switch-form div{
+   flex-grow: 1
+}
+.user-switch-form a {
+    line-height: .853333rem;
+    font-size: .426667rem;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 2px 0;
+    color: #333333;
+    display: block;
+}
+.user-switch-form a.active {
+    color: #19b497;
+    border-bottom-color: #19b497;
+}
+.login-form-section{
+    padding: 0 .293333rem;
+    line-height: 1.12rem;
+    background: #ffffff;
+    display: flex;
+    border-bottom: 1px solid #f4f4f4;
+    justify-content: space-between
+}
+.login-form-section label,
+.login-form-section input{
+    display: block;
+    flex: 1;
+    min-width: 0.5em;
+}
+input{
+    font-size: .373333rem;
+    text-align: right;
+    border: none;
+}
+.login-img-code{
+
+}

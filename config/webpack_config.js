@@ -6,6 +6,7 @@ const webpack_config = {
         // app: './src/javascripts/app.js',
         editResume:'./src/javascripts/editResume.js',
         home: './src/javascripts/home.js',
+        login: './src/javascripts/login.js',
         'home-job-detail': './src/javascripts/home-job-detail.js',
         'home-company-detail': './src/javascripts/home-company-detail.js'
     },
