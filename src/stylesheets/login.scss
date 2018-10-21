@@ -1,24 +1,29 @@
 @import './yo/usage/core/reset.scss';
 
-body{
+body {
     background: #f0f4f7;
 }
+
 .login-top__logo {
     height: 3.2rem;
     background: url(https://rcss.quanzhi.cn/images/logo.png) center / auto 29.57746479% no-repeat;
 }
-.user-login-forms{
+
+.user-login-forms {
     padding: 0 .213333rem;
 }
-.user-switch-form{
+
+.user-switch-form {
     background: #ffffff;
     padding: 0 1rem 0.64rem;
     display: flex;
     text-align: center;
 }
-.user-switch-form div{
-   flex-grow: 1
+
+.user-switch-form div {
+    flex-grow: 1
 }
+
 .user-switch-form a {
     line-height: .853333rem;
     font-size: .426667rem;
@@ -28,11 +33,13 @@ body{
     color: #333333;
     display: block;
 }
+
 .user-switch-form a.active {
     color: #19b497;
     border-bottom-color: #19b497;
 }
-.login-form-section{
+
+.login-form-section {
     padding: 0 .293333rem;
     line-height: 1.12rem;
     background: #ffffff;
@@ -40,17 +47,69 @@ body{
     border-bottom: 1px solid #f4f4f4;
     justify-content: space-between
 }
+
 .login-form-section label,
-.login-form-section input{
+.login-form-section input {
     display: block;
     flex: 1;
     min-width: 0.5em;
 }
-input{
+
+input {
     font-size: .373333rem;
     text-align: right;
     border: none;
 }
-.login-img-code{
 
+.login-img-code {
+    width: 2.2rem;
+    display: inline-block;
+    text-align: right;
+    margin-left: .133333rem;
+    position: relative;
+}
+
+.login-img-code:before {
+    content: '';
+    width: 1px;
+    position: absolute;
+    left: 0;
+    top: .25rem;
+    bottom: .25rem;
+    background: #ebebeb;
+}
+
+.login-submit-section input[type="submit"] {
+    display: block;
+    width: 100%;
+    margin-top: 1.04rem;
+    line-height: 1.08rem;
+    height: 1.08rem;
+    font-size: .373333rem;
+    background: #19b497;
+    color: #ffffff;
+    border-radius: 1.06666667rem;
+    text-align: center;
+}
+
+.login-agree {
+    font-size: .373333rem;
+    line-height: 1.4rem;
+    color: #b3b3b3;
+    text-align: center;
+}
+
+.login-agree a {
+    color: #333333;
+}
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    font-size: .373333rem;
+    line-height: 0.92rem;
+    color: #b3b3b3;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
