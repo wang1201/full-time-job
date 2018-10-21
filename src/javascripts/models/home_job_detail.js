@@ -2,9 +2,9 @@
 const job_detailInfo = (id) => {
     return $.ajax({
         url: `/quanzhi/ajax/job/pagedetail?jobid=${id}`,
+        dataType:'json',
         success: (res) => {
             console.log(res);
-            
             return res;
         }
     })

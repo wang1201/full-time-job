@@ -1,5 +1,5 @@
 {{#each _job_list}}
-<div class="job-item" index="{{this.Id}}">
+<a class="job-item" index="{{this.Id}}" href="../../job-detail.html">
     {{#if this.ComLogo}}
     <img src="https://gs.quanzhi.com/getpic/?id={{this.ComLogo}}" class="job-item__logo">
     {{else if this.ComLogoFlag}}
@@ -29,5 +29,5 @@
         </p>
     </div>
 
-</div>
+</a>
 {{/each}}

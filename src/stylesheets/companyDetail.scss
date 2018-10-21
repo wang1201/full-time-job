@@ -7,6 +7,10 @@ body {
 
 }
 
+.home-company__banner img {
+    width: 100%;
+}
+
 .content {
     display: flex;
     flex-direction: column;
@@ -16,64 +20,63 @@ body {
 
 
 
-.job-detail__content {
+.company-detail__content {
     flex-grow: 1;
     flex-shrink: 1;
     overflow: scroll;
 }
 
-.job-detail__general {
+.company-detail__general {
     background: #ffffff;
-    padding: .32rem .266667rem;
+    padding: .32rem .266667rem .1rem;
+    position: relative;
 }
 
-.job-detail__position {
+.company-detail__position {
     display: flex;
     align-content: center;
     justify-content: space-between;
 }
 
-.job-detail__positionName {
+.company-detail__positionName {
     font-weight: 500;
-    font-size: .48rem;
-    line-height: .746667rem;
+    font-size: .4rem;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     flex-grow: 1;
 }
 
-.job-detail__timer {
-    color: #b3b3b3;
-    font-size: .32rem;
-    width: 0.8rem;
-    line-height: .613333rem;
-    align-items: center
-}
 
-.job-detail__salary {
+.company-detail__salary {
     font-size: .426667rem;
     line-height: .64rem;
     color: #19b497;
 }
 
-.job-detail__required {
-    line-height: .746667rem;
+.company-detail__required {
     font-size: .32rem;
     color: #999;
 }
 
-.job-detail__rulesInfo {
+.company-detail__rulesInfo {
     white-space: pre-line;
 }
 
-.job-detail__condition {
+.company-detail__condition {
     margin-right: .133333rem
 }
 
 .company-general {
     margin-top: .266667rem;
     background: #ffffff;
+}
+
+.company-logo {
+    color: #999;
+    line-height: .56rem;
+    font-size: 0.32rem;
+    margin: -1.6rem 0 .16rem;
 }
 
 .company-general__con {
@@ -95,9 +98,15 @@ body {
     text-align: center;
     line-height: 1.76rem;
     font-size: .96rem;
-    background: #f2f2f2;
+    display: block;
+    background: #ffffff;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
 }
 
+// .company-general__logo span{
+//     width: 100%;
+//     height: 100%;
+// }
 .company-general__info {
     padding-left: 0.3rem;
     flex-grow: 1;
@@ -134,14 +143,14 @@ body {
     font-weight: 600;
 }
 
-.job-detail__info {
+.company-detail__info {
     margin-top: .266667rem;
     background: #ffffff;
     padding: 0.2rem .266667rem;
     line-height: .533333rem;
 }
 
-.job-detail__comTitle {
+.company-detail__comTitle {
     line-height: .64rem;
     font-size: .373333rem;
     font-weight: normal;
@@ -149,8 +158,8 @@ body {
     color: #666666;
 }
 
-.job-detail__comTitle::before,
-.job-detail__comTitle::after {
+.company-detail__comTitle::before,
+.company-detail__comTitle::after {
     content: "\020";
     width: 2.666667rem;
     height: .306667rem;
@@ -160,26 +169,32 @@ body {
     display: inline-block;
 }
 
-.job-detail__rules {
-    color: #666666;
-    padding: .213333rem .013333rem 0;
+.company-detail__rules {
+    padding: 0 .013333rem 0;
     line-height: .533333rem;
     font-size: .346667rem;
+    color: #999999;
 }
 
-.job-detail__common {
+.company-detail__rules ul {
+    max-height: 3.2rem;
+    overflow: hidden;
+    -webkit-linear-gradient:(top, rgba(255, 255, 255, 0.99) 0%, rgba(255, 255, 255, 0.99) 60%, rgba(255, 255, 255, 0.4) 100%);
+}
+
+.company-detail__common {
     line-height: .533333rem;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
 }
 
 .common-icon {
-    width: .453333rem;
+    width: .533333rem;
     margin: 0 .133333rem;
 }
 
-.job-detail__address {
+.company-detail__address {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -192,14 +207,14 @@ body {
 
 }
 
-.job-detail__common .icon-xiala {
+.company-detail__common .icon-xiala {
     -webkit-transform: rotate(-90deg);
     font-size: .426667rem;
     font-weight: 600;
     color: #999;
 }
 
-.com-publishjob-link {
+.com-publishcompany-link {
     display: block;
     line-height: .746667rem;
     font-size: .32rem;
@@ -208,10 +223,7 @@ body {
     text-align: center;
 }
 
-.job-detail__footer {
-    flex-shrink: 0;
-    flex-grow: 0;
-}
+.company-detail__footer {}
 
 .detail-footer__flexbox {
     height: 1.2rem;
@@ -219,11 +231,13 @@ body {
     font-size: .32rem;
     background-color: #f6f6f6;
     color: #c2cfcc;
-    justify-content:space-around;
+    justify-content: space-around;
 }
-.detail-footer__flexbox .iconfont{
-     font-size: .373333rem;
+
+.detail-footer__flexbox .iconfont {
+    font-size: .373333rem;
 }
+
 .flexbox-share {
     display: flex;
     flex-direction: column;
@@ -241,7 +255,7 @@ body {
     align-items: center;
     padding-right: .64rem;
     width: 2.133333rem;
-     padding-top: 0.1rem;
+    padding-top: 0.1rem;
 }
 
 .flexbox-apply {

@@ -1,12 +1,11 @@
 import job_template from '../views/home-job.html';
 import job_content_template from '../views/home-job-content.html';
 import job_model from '../models/home_job_model';
-import job_detail from '../models/home_job_detail';
 
-import job_detail_template from '../views/home-job-detail.html';
 
 
 import BScroll from 'better-scroll';
+
 
 // 当前加载的职位信息的页数
 let _pageNo = 1;
@@ -28,7 +27,9 @@ const handleContentScroll = async () => { // 处理整个程序滚动等等逻�
     // 实力和bscroll
     let _job_scroll = new BScroll('main', {
         startY: 0,
-        probeType: 2
+        probeType: 2,
+        tap: true,
+        click:true
     });
 
     await getJobList(); // 初始加载第一页
@@ -110,25 +111,17 @@ const refreshJobList = async () => { // 下拉刷新的时候去获取数据
 }
 
 const getJobList = async () => { // 获取某一页数据
-
     let _job_data = await job_model.job_list(_pageNo);
     _job_data = JSON.parse(_job_data);
     let ids = _job_data.result.ids;
     let _job_list = [];
-    let _cominfo_List = [];
     ids.forEach(item => {
         _job_list.push(_job_data.result.list[item]);
     });
-    console.log(_job_list[0]);
     _job_list.forEach(item => {
-
         item['ComLogoFlag'] = _job_data.result.cominfoList[item.ParentComId].ComLogoFlag;
     })
-    console.log(_job_list);
-
     // 多个职位信息数组
-
-
     datasourceList = [...datasourceList, ..._job_list];
     renderJobList() // 每次获取到新的数据后重新渲染
 
@@ -143,14 +136,14 @@ const renderJobList = () => { // 渲染job-content
     })
     //  渲染job视图
     $('.home-container main .job-content').html(_html);
+    
     $('.home-container main .job-item').tap(function () {
-        // location.href = '../../job-detail.html';
         let _index = $(this).attr('index');
-        console.log(_index);
-        let x = job_detail.job_detailInfo(_index);
-        console.log(x);
+         sessionStorage.setItem('id', _index);
+        // getJobDetail(_index); 
     })
 }
+
 
 
 export default {
