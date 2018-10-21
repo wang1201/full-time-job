@@ -1,0 +1,208 @@
+
+@import './yo/usage/core/reset.scss';
+
+
+@import './modules/home';
+
+@import './modules/test';
+
+
+body { background: #f0f4f7; overflow: auto; }
+.addtype-title{
+    display: flex;
+    line-height:1rem;
+    justify-content: space-between;
+    background: #fff;
+}
+.addtype-title h1{
+    flex-grow:1;
+    font-size: 32px;
+    font-weight: 500;
+    color: #333333;
+    text-align: center;
+}
+.addtype-title a,span{
+    width: .933333rem;
+}
+.addtype-title .lift-arrow{
+    font-size: .533333rem;
+    color: #ccc;
+    margin-left: .333333rem
+}
+// 简历验证
+form {
+    line-height:1.333333rem;
+    font-size: .373333rem;
+ 
+}
+    
+
+input, textarea, select {
+    padding: 0;
+    border: 0;
+    
+}
+form > div {
+    margin-top: .266667rem;
+    background: #ffffff;
+    padding: 0 .266667rem;
+}
+.form-section{
+    display: flex;
+    border-bottom: 1px solid #f4f4f4;
+}
+form .form-section > input[type="text"] {
+    text-align: right;
+    flex-grow: 5;
+    flex-shrink: 1;
+    flex-basis: 0%;
+}
+.label {
+    flex-grow: 2;
+    flex-shrink: 1;
+    flex-basis: 0%;
+}
+.gengduo{
+    font-size: .373333rem;
+}
+
+form input[type="radio"] {
+    display: none;
+}
+input[type="radio"]:checked ~ span {
+    background: #19b497;
+    color: #ffffff;
+}
+form input[type="radio"] ~ span {
+    display: inline-block;
+    line-height:.56rem;
+    width: .826667rem;
+    text-align: center;
+    color: #b3b3b3;
+    border-radius: 2px;
+    box-shadow: 0 0 1px #b3b3b3 inset;
+ }
+
+ .btn-line {
+     margin: .666667rem .266667rem;
+ }
+ .btn-line input {
+    width: 100%;
+    font-size: .426667rem;
+    line-height: 1.066667rem;
+    color: #ffffff;
+    background: #19b497;
+    border-radius: .266667rem;
+}
+
+// 城市样式
+
+.picker .picker-panel {
+    height: 6.666667rem;
+}
+
+.picker .picker-panel .picker-choose {
+    line-height: 1.066667rem;
+    font-size: .453333rem;
+}
+.picker .picker-panel .picker-choose .picker-title {
+    line-height: 1.066667rem;
+    font-size: .453333rem;
+
+}
+.picker .picker-panel .picker-content {
+    margin-top: 10px;
+}
+.picker .picker-panel .picker-choose .cancel, .picker .picker-panel .picker-choose .confirm {
+ 
+     padding: 0px; 
+        top: 0px; 
+}
+// 自我介绍样式
+.shade{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+    display: none;
+}
+.shade .content{
+    background: #fff;
+    width: 100%;
+    padding: .533333rem 
+}
+#assessment{
+    width: 100%;
+    height: 2.48rem;
+    font-size: .373333rem;
+    line-height: .373333rem;
+}
+.form-textarea p {
+    font-size: .266667rem;
+    line-height: .64rem;
+    text-align: right;
+    color: #b3b3b3;
+}
+.btn-group{
+    display: flex;
+}
+.btn-group .cancel {
+    flex: 1;
+    color: #b3b3b3;
+    background: #f2f2f2;
+    height: 1.066667rem;
+    border: 0;
+    padding: 0;
+    line-height: 1.066667rem;
+    font-size:.426667rem;
+}
+.btn-group .submit {
+    flex: 1;
+    color: #ffffff;
+    background: #19b497;
+    height: 1.066667rem;
+    border: 0;
+    padding: 0;
+    line-height: 1.066667rem;
+    font-size:.426667rem;
+}
+
+.must{
+     color: #f00;
+     width: .266667rem
+}
+.none{
+    padding-left: .266667rem;
+}
+main{
+    overflow: scroll
+}
+form .introduce {
+    padding: .2rem .533333rem;
+    line-height: .56rem;
+    color: #b3b3b3;
+    display: none;
+    font-size: .373333rem
+}
+
+.error{
+    width: 100%;
+    height: 1.066667rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    text-align: center;
+    padding: .266667rem;
+    line-height: .533333rem;
+    display: none;
+    z-index: 999;
+}
+.error span{
+    font-size: .373333rem;
+    line-height: .533333rem;
+    color: #fff;
+    
+}

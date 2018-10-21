@@ -3,7 +3,8 @@
 const webpack_config = {
     mode: 'production',
     entry: {
-        app: './src/javascripts/app.js'
+        app: './src/javascripts/app.js',
+        editResume:'./src/javascripts/editResume.js'
     },
     // entry: ['./src/javascripts/app.js', './src/javascripts/vendor.js'],
     output: {

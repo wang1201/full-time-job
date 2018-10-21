@@ -1,0 +1,51 @@
+@import './yo/usage/core/reset.scss';
+
+
+@import './modules/home';
+
+@import './modules/test';
+
+
+body { background: #f0f4f7; overflow: auto; }
+// addtype-title
+.addtype-title{
+    display: flex;
+    line-height:1rem;
+    justify-content: space-between;
+    background: #fff;
+}
+.addtype-title h1{
+    flex-grow:1;
+    font-size: 32px;
+    font-weight: 500;
+    color: #333333;
+    text-align: center;
+}
+.addtype-title a,span{
+    width: .933333rem;
+}
+.addtype-title .lift-arrow{
+    font-size: .533333rem;
+    color: #ccc;
+    margin-left: .333333rem
+}
+ul li a {
+    display: flex;
+    margin-top: .266667rem;
+    background: #ffffff;
+    height: 2.4rem;
+    align-items: center;
+}
+li a img{
+    margin-left: .333333rem;
+    margin-right: .8rem;
+}
+li a h5{
+    color: #333333;
+    font-size: .426667rem;
+    font-weight: 400;
+}
+li a span{
+    color: #666666;
+    font-size: .373333rem;
+}
