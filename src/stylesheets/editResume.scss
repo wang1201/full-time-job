@@ -15,10 +15,11 @@ body { background: #f0f4f7; overflow: auto; }
     background: #fff;
 }
 .addtype-title h1{
-    flex-grow:1;
-    font-size: 32px;
+    font-size: .426667rem;
     font-weight: 500;
     color: #333333;
+    flex-grow:1;
+    padding-left: .266667rem;
     text-align: center;
 }
 .addtype-title a,span{
@@ -26,8 +27,9 @@ body { background: #f0f4f7; overflow: auto; }
 }
 .addtype-title .lift-arrow{
     font-size: .533333rem;
-    color: #ccc;
-    margin-left: .333333rem
+    font-weight: bold;
+    color: #b3b3b3;
+    padding-left: .266667rem;
 }
 // 简历验证
 form {
