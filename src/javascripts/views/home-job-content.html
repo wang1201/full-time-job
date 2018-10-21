@@ -1,14 +1,33 @@
+{{#each _job_list}}
+<a class="job-item" index="{{this.Id}}" href="../../home-job-detail.html">
+    {{#if this.ComLogo}}
+    <img src="https://gs.quanzhi.com/getpic/?id={{this.ComLogo}}" class="job-item__logo">
+    {{else if this.ComLogoFlag}}
+    <p class="job-item__logoError">{{this.ComLogoFlag}}</p>
+    {{else }}
+    <p class="job-item__logoError">全</p>
+    {{/if}}
 
-    {{#each _job_list}}
-    <div class="job-item">
-        <img src="https://www.lgstatic.com/{{this.companyLogo}}" class="job-item__logo">
-        <div class="job-item__info">
-            <h2 class="job-item__company">{{this.companyName}}</h2>
-            <p class="job-item__title">
-                {{this.positionName}} [ {{this.city}} ]
+    <div class="job-item__info">
+        <h2 class="job-item__content">
+            <span class="job-item__company">{{this.JobTitle}}</span>
+            <span class="job-item__salary">{{this.FreshTimeShow}}</span>
+        </h2>
+        <div class="job-item__title">
+            <p class="job-item__adress">
+                <i class="iconfont icon-weibiao45100847"></i>
+                <span> {{this.ComName}}</span>
             </p>
-            <p class="job-item__time">{{this.createTime}}</p>
+            <p class="job-item__adress">
+                <i class="iconfont icon-iconfontdingwei"></i>
+                <span>{{this.WorkPlaceName}}</span>
+            </p>
         </div>
-        <div class="job-item__salary">{{this.salary}}</div>
+        <p class="job-item__time">
+            <i class="iconfont icon-dengdai"></i>
+            {{this.SalaryShow}}
+        </p>
     </div>
-    {{/each}}
+
+</a>
+{{/each}}

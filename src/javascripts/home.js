@@ -1,10 +1,4 @@
 
-//jack-detail
-// tom-login
-
-//rem
-// require('./modules/flexible');
-// import './modules/flexible'
 
 import Router from './router'
 import home_controller from './controllers/home_controller';
@@ -14,7 +8,7 @@ import home_controller from './controllers/home_controller';
 home_controller.render(); 
 
 // 启动路由
-const router = new Router({ initial: '#/job' });
+const router = new Router({ initial: '#/home' });
 window.router = router;
 router.init();
 

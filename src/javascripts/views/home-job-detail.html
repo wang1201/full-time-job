@@ -1,0 +1,82 @@
+<div class="job-detail__general">
+    <p class="job-detail__position">
+        <span class="job-detail__positionName">{{jobDetail.JobTitle}}</span>
+        <span class="job-detail__timer">{{jobDetail.FreshTime}}</span>
+    </p>
+    <p class="job-detail__salary">￥{{jobDetail.SalaryName}}</p>
+    <p class="job-detail__required">
+        <span>
+            {{#if jobDetail.WorkExperenceName}}
+            <i class="iconfont icon-dengdai job-detail__condition"></i>{{jobDetail.WorkExperenceName}}
+            {{else}}
+            <i class="iconfont icon-dengdai job-detail__condition"></i>经验不限
+            {{/if}}
+            {{#if jobDetail.DegreeName}}
+            <i class="iconfont icon-12 job-detail__condition"></i>{{jobDetail.DegreeName}}
+            {{/if}}
+        </span>
+    </p>
+</div>
+<div class="company-general">
+    <a class="company-general__con" index="{{company.Id}}" href="../../home-company-detail.html">
+        
+        {{#if company.ComLogoFlag}}
+        <span class="company-general__logo">
+            <span>{{company.ComLogoFlag}}</span>
+        </span>
+        {{else }}
+        <span class="company-general__logo">
+            <span>全</span>
+        </span>
+        {{/if}}
+
+        <span class="company-general__info">
+            <span class="company-general__name">{{company.ComName}}</span>
+            <span class="company-generalindustry">{{company.ComIndustryName}}</span>
+            <span class="company-generalnatr">{{company.ComNatureName}}({{company.ComSizeName}})</span>
+        </span>
+        <span class="company-general__arrow">
+            <i class="iconfont icon-xiala"></i>
+        </span>
+    </a>
+</div>
+<div class="job-detail__info">
+    <h2 class="job-detail__comTitle">职位详情</h2>
+    <div class="job-detail__rules">职位性质：{{jobDetail.JobTypeName}}</div>
+    <div class="job-detail__rules">招聘人数：{{jobDetail.InviteNum}}人</div>
+    <dl class="job-detail__rules">
+        <dt>职位描述：</dt>
+        <dd class="job-detail__rules">
+            <ul>
+                <li class="job-detail__rulesInfo">{{stringJob}}</li>
+            </ul>
+        </dd>
+    </dl>
+</div>
+<div class="job-detail__info">
+    <h2 class="job-detail__comTitle">工作地点</h2>
+    <div class="job-detail__common">
+        <img class="common-icon" src="https://rcss.quanzhi.cn/images/addr.png">
+        <span class="commom-font">{{company.ComBrand}}</span>
+        <span class="iconfont icon-xiala"></span>
+    </div>
+</div>
+<div class="job-detail__info">
+    <h2 class="job-detail__comTitle">企业认证</h2>
+    <div class="job-detail__common">
+        <img class="common-icon" src="https://rcss.quanzhi.cn/images/jobdetail/auth1.png">
+        <span class="commom-font job-detail__address">该企业已上传营业执照并通过全职招聘网人工审核</span>
+    </div>
+    <div class="job-detail__common">
+        <img class="common-icon" src="https://rcss.quanzhi.cn/images/jobdetail/auth2.png">
+        <span class="commom-font">该职位负责人已完成个人芝麻信用认证</span>
+    </div>
+</div>
+<div class="job-detail__info">
+    <h2 class="job-detail__comTitle">温馨提示</h2>
+    <div class="job-detail__common">
+        <img class="common-icon" src="https://rcss.quanzhi.cn/images/addr.png">
+        <span class="commom-font">若用人单位存在提供虚假招聘信息，以担保或者其他任何名义收取财物（如办卡费、押金、培训费），扣押或以保管为名索要身份证、毕业证及其他证件等行为，都属于违法行为，请提高警惕。</span>
+    </div>
+</div>
+<a href="javascript:;" class="com-publishjob-link">我是企业，我也想在全职招聘网发布职位</a>
