@@ -3,9 +3,8 @@
 </div>
 <div class="company-detail__general">
     <p class="company-logo">
-        {{#if companyDetail.ComLogo}}
-        <img src="{{companyDetail.ComLogo}}" class="company-general__logo">
-        {{else if companyDetail.ComLogoFlag}}
+
+        {{#if companyDetail.ComLogoFlag}}
         <span class="company-general__logo">
             {{companyDetail.ComLogoFlag}}
         </span>
@@ -35,13 +34,21 @@
 </div>
 <div class="company-detail__info">
     <h2 class="company-detail__comTitle">公司简介</h2>
-    <dl class="company-detail__rules">
-        <dd class="company-detail__rules">
-            <ul>
-                <li class="company-detail__rulesInfo">{{companyDetail.ComDescription}}</li>
-            </ul>
-        </dd>
-    </dl>
+    <div class="company-detail__rules">
+        <p class="company-detail__rulesCon">
+            {{companyDetail.ComDescription}}
+        </p>
+        <a href="javascript:;" class="company-detail__toggle">展开<i class="iconfont icon-xiala"></i></a>
+    </div>
+</div>
+<ul class="company-detail__info">
+    <h2 class="company-detail__comTitle">在招岗位</h2>
+    <ul class="company-detail__common">
+         <li>
+             <a></a>
+             
+         </li>
+    </ul>
 </div>
 <!-- <div class="company-general">
     <a class="company-general__con" href="../../company-detail.html">

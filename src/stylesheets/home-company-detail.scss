@@ -1,5 +1,5 @@
 @import './yo/usage/core/reset.scss';
-@import 'common.scss';
+@import 'home-common.scss';
 
 body {
     background: #f7f7f7;
@@ -62,7 +62,10 @@ body {
 .company-detail__rulesInfo {
     white-space: pre-line;
 }
-
+.company-detail__toggle{
+    text-align: center;
+    display: block;
+}
 .company-detail__condition {
     margin-right: .133333rem
 }
@@ -176,12 +179,17 @@ body {
     color: #999999;
 }
 
-.company-detail__rules ul {
+.company-detail__rulesCon {
     max-height: 3.2rem;
     overflow: hidden;
-    -webkit-linear-gradient:(top, rgba(255, 255, 255, 0.99) 0%, rgba(255, 255, 255, 0.99) 60%, rgba(255, 255, 255, 0.4) 100%);
+    background: linear-gradient(top, rgba(255, 255, 255, 0.99) 0%, rgba(255, 255, 255, 0.99) 60%, rgba(255, 255, 255, 0.4) 100%);
+    background:-webkit-linear-gradient(top, rgba(255, 255, 255, 0.99) 0%, rgba(255, 255, 255, 0.99) 60%, rgba(255, 255, 255, 0.4) 100%);
 }
-
+.company-rulesCon__iconfont{
+    display: inline-block;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+}
 .company-detail__common {
     line-height: .533333rem;
     display: flex;

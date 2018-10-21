@@ -19,9 +19,8 @@
 </div>
 <div class="company-general">
     <a class="company-general__con" index="{{company.Id}}" href="../../home-company-detail.html">
-        {{#if company.ComLogo}}
-        <img src="{{company.ComLogo}}" class="company-general__logo">
-        {{else if company.ComLogoFlag}}
+        
+        {{#if company.ComLogoFlag}}
         <span class="company-general__logo">
             <span>{{company.ComLogoFlag}}</span>
         </span>

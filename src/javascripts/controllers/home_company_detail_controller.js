@@ -14,12 +14,29 @@ const getcompanyDetail = async () => {
     // let companyDescribe = _detail_data.result.data.companyDetail.companyDescribe;
     // let stringcompany = companyDescribe.replace(/<br>/g, "\n");
     // let stringcompanyInfo = stringcompany.replace(/<br \/>/g, "");
-    let _html =  _template({
+    let _html = _template({
         companyDetail: _company_data.result,
         jobDetail: _job_data.result,
         // stringcompany: stringcompanyInfo
     });
     $('.company-detail__content').html(_html);
+    $('.company-detail__toggle').tap(function () {
+        let overflow = $('.company-detail__rulesCon').css('overflow');
+        if (overflow == 'hidden') {
+            $('.company-detail__rulesCon').css({
+                'overflow': 'auto',
+                'max-height': 'none'
+            });
+            $(this).html('收起<i class="iconfont icon-xiala company-rulesCon__iconfont"></i>');
+        } else { 
+             $('.company-detail__rulesCon').css({
+                 'overflow': 'hidden',
+                 'max-height': '3.2rem'
+             });
+             $(this).html('展开<i class="iconfont icon-xiala"></i>');
+        }
+
+    })
 }
 
 export default {
