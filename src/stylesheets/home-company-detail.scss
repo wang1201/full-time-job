@@ -3,10 +3,14 @@
 
 body {
     background: #f7f7f7;
-    overflow-y: scroll;
 
 }
-
+.company-detail {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .home-company__banner img {
     width: 100%;
 }
@@ -18,13 +22,18 @@ body {
     height: 100%;
 }
 
-
-
 .company-detail__content {
     flex-grow: 1;
     flex-shrink: 1;
     overflow: scroll;
+    // overflow: hidden;
 }
+
+// .company-detail__content {
+//     flex-grow: 1;
+//     flex-shrink: 1;
+//     overflow: scroll;
+// }
 
 .company-detail__general {
     background: #ffffff;
@@ -62,10 +71,12 @@ body {
 .company-detail__rulesInfo {
     white-space: pre-line;
 }
-.company-detail__toggle{
+
+.company-detail__toggle {
     text-align: center;
     display: block;
 }
+
 .company-detail__condition {
     margin-right: .133333rem
 }
@@ -183,22 +194,67 @@ body {
     max-height: 3.2rem;
     overflow: hidden;
     background: linear-gradient(top, rgba(255, 255, 255, 0.99) 0%, rgba(255, 255, 255, 0.99) 60%, rgba(255, 255, 255, 0.4) 100%);
-    background:-webkit-linear-gradient(top, rgba(255, 255, 255, 0.99) 0%, rgba(255, 255, 255, 0.99) 60%, rgba(255, 255, 255, 0.4) 100%);
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.99) 0%, rgba(255, 255, 255, 0.99) 60%, rgba(255, 255, 255, 0.4) 100%);
 }
-.company-rulesCon__iconfont{
+
+.company-rulesCon__iconfont {
     display: inline-block;
     transform: rotate(180deg);
     -webkit-transform: rotate(180deg);
 }
-.company-detail__common {
+
+.company-detail__com {
+    display: flex;
+    justify-content: space-between;
+}
+
+.company-detail__job {
+    width: 100%;
     line-height: .533333rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-bottom: 1px solid #f4f4f4;
+
+    a {
+        padding: .2rem 0;
+        width: 100%;
+    }
+}
+
+.company-job-name {
+    line-height: .56rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.company-job-time {
+    color: #b3b3b3;
+}
+
+.company-job-info {
+    line-height: .56rem;
+    color: #b3b3b3;
+}
+
+.company-job-money {
+    color: #f7931e;
+}
+
+.company-job-info span {
+    margin-right: .266667rem;
+}
+
+.company-job-post {
+    color: #333333;
+    max-width: 7rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .common-icon {
-    width: .533333rem;
+    height: .533333rem;
     margin: 0 .133333rem;
 }
 
@@ -216,10 +272,13 @@ body {
 }
 
 .company-detail__common .icon-xiala {
-    -webkit-transform: rotate(-90deg);
+   
     font-size: .426667rem;
     font-weight: 600;
     color: #999;
+    display: inline-block;
+     -webkit-transform: rotate(-90deg);
+     transform: rotate(-90deg);
 }
 
 .com-publishcompany-link {
