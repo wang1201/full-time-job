@@ -12,13 +12,13 @@ $('#submit').tap(function () {
     } else if(textcode == '' || textcode == null) {
         error = '请输入图片验证';
         success();
-    } else if (textcode.length > 4 || textcode.length < 1) {
+    } else if (textcode.length != 4) {
         error = '图片验证不正确';
         success();
     } else if (msgcode == '' || msgcode == null) {
         error = '请输入短信验证';
         success();
-    } else if (msgcode.length > 4 || msgcode.length < 1) {
+    } else if (msgcode.length != 4 ) {
         error = '短信验证不正确';
         success();
     } else {
