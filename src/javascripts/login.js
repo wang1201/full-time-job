@@ -1,17 +1,35 @@
-// import login_controller from './controllers/login_controller';
-
-
-// // 渲染视图
-// login_controller.render();
-
-//  $('.login-submit-section').tap(function () {
-//      return false
-//  })
-
-// function checkPhone() {
-//     var phone = document.getElementById('phone').value;
-//     if (!(/^1[34578]\d{9}$/.test(phone))) {
-//         alert("手机号码有误，请重填");
-//         return false;
-//     }
-// }
+let error = ''
+$('#submit').tap(function () {
+    let phone = $("#phone").val();
+    let textcode = $("#textcode").val();
+    let msgcode = $('#msgcode').val();
+    if (phone == '' || phone == null) {
+        error = '请输入手机号码';
+        success();
+    } else if (!(/^1[34578]\d{9}$/.test(phone))) {
+        error = '手机格式不正确';
+        success();
+    } else if(textcode == '' || textcode == null) {
+        error = '请输入图片验证';
+        success();
+    } else if (textcode.length > 4 || textcode.length < 1) {
+        error = '图片验证不正确';
+        success();
+    } else if (msgcode == '' || msgcode == null) {
+        error = '请输入短信验证';
+        success();
+    } else if (msgcode.length > 4 || msgcode.length < 1) {
+        error = '短信验证不正确';
+        success();
+    } else {
+        location.href = "/#/home";
+    }
+})
+const success = () => {
+    $(".login-error-info").html(error);
+    $(".login-error").fadeIn();
+    setTimeout(() => {
+        $(".login-error").fadeOut()
+    }, 3000)
+     return false;
+}
