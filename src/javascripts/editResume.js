@@ -107,42 +107,53 @@
      var flag = true;
      var error=''
      $(".save").on("click",()=>{
- 
-         if( $('.needAddress').val()=='' ) {
-             flag =false;
-             error ='请填写期望地点' 
-           }
-           if( $('.birthDay').val()=='' ) {
-             flag =false;
-             error ='请填写出生日期' 
-           }
-           if( $('.address').val()=='' ) {
-             flag =false;
-             error ='请填写租住地' 
-           }
-           if( $('.jobTime').val()=='' ) {
-             flag =false;
-             error ='请填写参加工作时间' 
-           }
-           let str = $(".phone").val();
-           if(!( /^\d{11}$/.test(str))){
-             flag =false;
-             error ='手机格式不正确'
-           }
-           if(str=='' ) {
-             flag =false;
-             error ='请填手机号' 
-           }
+
+        let str = $(".phone").val();
+
+        if( $('.userName').val()=='' ) {
            
-           if( $('.userName').val()=='' ) {
-             flag =false;
-             error ='请填写姓名' 
-           }
-           if(flag){
-              alert("保存成功") 
-           }else{
+            error ='请填写姓名' 
+            show();
+          }else if(str=='' ) {
+           
+            error ='请填手机号' 
+            show();
+          } else if(!( /^\d{11}$/.test(str))){
+          
+            error ='手机格式不正确'
+            show();
+          }else if( $('.jobTime').val()=='' ) {
+          
+            error ='请填写参加工作时间' 
+            show();
+          }else if( $('.address').val()=='' ) {
+            
+            error ='请填写居住地' 
+            show();
+          }else if( $('.birthDay').val()=='' ) {
+           
+            error ='请填写出生日期' 
+            show();
+          }else if( $('.needAddress').val()=='' ) {
+            
+             error ='请填写期望地点' 
              show();
-           }     
+           } else{
+            error ='保存成功' 
+            show()
+    
+
+        }
+          
+           
+           
+        
+          
+          
+           
+          
+          
+          
  
    
      })
@@ -154,6 +165,7 @@
          setTimeout(()=>{
          $(".error").fadeOut()
         },3000)
+        return flag =false;
      }
  
      
