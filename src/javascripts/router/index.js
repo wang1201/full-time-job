@@ -47,7 +47,7 @@ class Router {
     switchTab () {
         // 要求需要根据路由切换而切换active类名的元素，必须加上nav-link类名，并且加上path属性
         $('.nav-link').each(function (item) {
-            console.log($(this).attr('path'));
+            // console.log($(this).attr('path'));
             if ( $(this).attr('path') === location.hash ) {
                 $(this).addClass('active');
             }else {
