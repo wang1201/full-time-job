@@ -118,7 +118,7 @@
            }
            if( $('.address').val()=='' ) {
              flag =false;
-             error ='请填写租住地' 
+             error ='请填写居住地' 
            }
            if( $('.jobTime').val()=='' ) {
              flag =false;
