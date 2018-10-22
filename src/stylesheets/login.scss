@@ -113,3 +113,23 @@ input {
     bottom: 0;
     left: 0;
 }
+.login-error {
+    width: 100%;
+    height: 1.066667rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    text-align: center;
+    padding: .266667rem;
+    line-height: .533333rem;
+    display: none;
+    z-index: 999;
+}
+
+.login-error-info {
+    font-size: .373333rem;
+    line-height: .533333rem;
+    color: #fff;
+
+}

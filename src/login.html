@@ -27,7 +27,7 @@
                 </div>
                 <div class="login-form-section">
                     <label>图片验证</label>
-                    <input type="text" placeholder="请输入图片验证">
+                    <input type="text" placeholder="请输入图片验证" id="textcode">
                     <div class="login-img-code">
                         <img id="img_vcode" src="https://m.quanzhi.com/user/vcode?type=login">
                     </div>
@@ -35,7 +35,7 @@
                 </div>
                 <div class="login-form-section ">
                     <label>验证码</label>
-                    <input type="text" placeholder="请输入验证码">
+                    <input type="text" placeholder="请输入验证码" id="msgcode">
                     <div class="login-img-code">
                         <a href="javascript:;" class="getvrcode">
                             <span>获取验证码</span>
@@ -43,15 +43,17 @@
                     </div>
                 </div>
                 <div class="login-submit-section">
-                    <input type="submit" value="确认">
+                    <input type="submit" value="确认" onclick="return false;" id="submit">
                 </div>
                 <p class="login-agree">
                     登录即代表同意
-                    
                     <a href="/user/protocol">《全职招聘网用户协议》</a>
                 </p>
+                <div class="login-error">
+                    <span class="login-error-info"></span>
+                </div>
             </form>
-            <form style="display: none;">
+            <!-- <form style="display: none;">
                 <div class="login-form-section">
                     <div><label>账号</label><input type="text" placeholder="请输入手机号"></div>
                 </div>
@@ -59,7 +61,7 @@
                     <div><label>密码</label><input type="password" placeholder="请输入密码"></div>
                 </div> <input type="submit" value="确认">
                 <p>登录即代表同意<a href="/user/protocol">《全职招聘网用户协议》</a></p>
-            </form>
+            </form> -->
         </div>
         <div class="copyright">全职招聘网版权所有&nbsp;©&nbsp;2012-2018</div>
 
