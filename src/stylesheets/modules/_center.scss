@@ -39,11 +39,11 @@ input, textarea, select {
     flex: 32;
 }
 .loginstate .ct {
-    display: block;
+    display: flex;
     flex: 5;
-    padding: .16rem 0;
     line-height: .64rem;
     color: #333333;
+    align-items: center;
 }
 .loginstate .reg-link {
     text-align: right;
