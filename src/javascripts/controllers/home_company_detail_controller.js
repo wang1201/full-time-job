@@ -8,9 +8,9 @@ let _pageNo = 1;
 let _job_data_list = [] // job页面要显示的列表的数据
 let _company_data_list = [];
 const render = () => {
-    let _template = Handlebars.compile(companyDetail_template);
-    let _html = _template();
-    $('#main').html(_html);
+    // let _template = Handlebars.compile(companyDetail_template);
+    // let _html = _template();
+    // $('#main').html(_html);
     // handleContentScroll();
     getcompanyDetail();
 }

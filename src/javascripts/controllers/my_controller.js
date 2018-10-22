@@ -1,9 +1,9 @@
 
 
-import profile_template from '../views/profile.html';
+import my_template from '../views/my.html';
 
 const render = () => {
-    $('.home-container main').html(profile_template);
+    $('.home-container main').html(my_template);
 // 自定义选择器
     var weekdayArr=['请选择','正在找工作','有更好的机会，我愿意考虑','暂时不想找工作',''];
     var mobileSelect1 = new MobileSelect({
