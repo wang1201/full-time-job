@@ -3,14 +3,12 @@
 const webpack_config = {
     mode: 'production',
     entry: {
-        // app: './src/javascripts/app.js',
         editResume:'./src/javascripts/editResume.js',
         home: './src/javascripts/home.js',
         login: './src/javascripts/login.js',
         'home-job-detail': './src/javascripts/home-job-detail.js',
         'home-company-detail': './src/javascripts/home-company-detail.js'
     },
-    // entry: ['./src/javascripts/app.js', './src/javascripts/vendor.js'],
     output: {
         filename: '[name].js'
     },

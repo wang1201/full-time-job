@@ -121,6 +121,7 @@ main {
     flex-direction: column;
     justify-content:space-around;
     line-height: .48rem;
+    color: #ccc;
 }
 .nav-link .iconfont{
     // padding-top: .133333rem;
@@ -134,7 +135,7 @@ main {
 }
 
 .footer__item.active {
-    color: #00b38a;
+    color: #19b497;
     background-color: #e7f3f0;
 }
 
